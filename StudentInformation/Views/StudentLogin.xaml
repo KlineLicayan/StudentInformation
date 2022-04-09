@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="StudentInformation.Views.StudentLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentInformation.Views"
+             mc:Ignorable="d" 
+             Resources="{StaticResource main}"
+             d:DesignHeight="200" d:DesignWidth="360">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+
+            <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                            x:Name="StudentID"
+                     MaxLength="20"
+                            KeyDown="StudentID_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student ID"/>
+
+            <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                     x:Name="StudentName"
+                     MaxLength="100"
+                            KeyDown="StudentName_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Name"/>
+
+            <Button Background="Transparent"
+                            HorizontalAlignment="Right"
+                            FontFamily="Montserrat"
+                            FontSize="10"
+                            FontWeight="Bold"
+                            Margin="0,10,0,30"
+                    Click="ForgotID"
+                            BorderThickness="0">
+                Forgot Student ID?
+            </Button>
+
+            <Button Style="{DynamicResource ButtonDesign }" Click="Button_Click">
+                <TextBlock Style="{DynamicResource DefaultFont}">
+                            <Span Foreground="{DynamicResource ColorWhite}">
+                                Login
+                            </Span>
+                </TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

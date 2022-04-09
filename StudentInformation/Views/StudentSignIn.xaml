@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="StudentInformation.Views.StudentSignIn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentInformation.Views"
+             mc:Ignorable="d" 
+             Resources="{StaticResource main}"
+             d:DesignHeight="200" d:DesignWidth="360">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel VerticalAlignment="Center">
+
+                <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                          x:Name="StudentName"
+                         MaxLength="100"
+                            KeyDown="StudentName_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Name"/>
+
+                <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                            x:Name="StudentCourse"
+                          MaxLength="100"
+                            KeyDown="StudentCourse_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Course"/>
+
+                <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                         x:Name="StudentAddress"
+                          MaxLength="150"
+                            KeyDown="StudentAddress_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Address"/>
+
+                <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,0"
+                         x:Name="StudentContact"
+                          MaxLength="20"
+                            KeyDown="StudentContact_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Contact"/>
+
+                <TextBox Style="{DynamicResource Input}" 
+                             Margin="0,10,0,30"
+                         x:Name="StudentGuardian"
+                          MaxLength="100"
+                            KeyDown="StudentGuardian_KeyDown"
+                            KeyUp="Reset_KeyUp"
+                             Text="Student Guardian"/>
+
+                <Button Style="{DynamicResource ButtonDesign }"
+                        Click="Button_Click">
+                    <TextBlock Style="{DynamicResource DefaultFont}">
+                            <Span Foreground="{DynamicResource ColorWhite}">
+                                Submit
+                            </Span>
+                    </TextBlock>
+                </Button>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

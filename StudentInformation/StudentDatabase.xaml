@@ -1,0 +1,209 @@
+﻿<Window x:Class="StudentInformation.StudentDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInformation"
+        mc:Ignorable="d"
+        Resources="{StaticResource main}"
+        Title="StudentDatabase" Height="450" Width="600"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,600,450"
+                           RadiusX="20" RadiusY="20"/>
+    </Window.Clip>
+
+    <Grid Background="{DynamicResource ColorWhite}"
+          MouseDown="MoveWindow">
+
+        <Grid Margin="20,0,20,25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock FontFamily="Montserrat"
+                               FontSize="20"
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"
+                               Padding="10,0,0,0">
+                        Admin Panel
+                    </TextBlock>
+                    
+                </Grid>
+                <Grid Grid.Column="1" VerticalAlignment="Center">
+                    <TextBox Width="250"
+                            Height="40" 
+                            x:Name="SearchBox"
+                            KeyDown="SearchBox_KeyDown"
+                            KeyUp="SearchBox_KeyUp"
+                            FontFamily="Montserrat"
+                            FontSize="14"
+                            Text="Search"
+                            VerticalContentAlignment="Center"
+                            Padding="10,0,10,0"
+                            FontWeight="Bold"
+                            Foreground="#B5B5B5"
+                            BorderThickness="0"/>
+                </Grid>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="375" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Width="370"
+                      Margin="0,0,5,0" Background="White">
+                    <ListView BorderThickness="0" x:Name="Display"
+                              FontFamily="Montserrat"
+                              FontSize="14"
+                              >
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Header="Student ID" Width="120" DisplayMemberBinding="{Binding ID}"/>
+                                    <GridViewColumn Header="Student Name" Width="230" DisplayMemberBinding="{Binding Name}"/>
+                                    <GridViewColumn Header="Math" Width="80" DisplayMemberBinding="{Binding Math}"/>
+                                    <GridViewColumn Header="Science" Width="80" DisplayMemberBinding="{Binding Science}"/>
+                                    <GridViewColumn Header="English" Width="80" DisplayMemberBinding="{Binding English}" />
+                                    <GridViewColumn Header="Filipino" Width="80" DisplayMemberBinding="{Binding Filipino }" />
+                                    <GridViewColumn Header="PE" Width="80" DisplayMemberBinding="{Binding PE}"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="15,0,0,0">
+                    <StackPanel >
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 x:Name="IDBox"
+                                 KeyDown="IDBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 Text="Student ID"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+                        
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 x:Name="MathBox"
+                                 KeyDown="MathBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 Text="Math Grade"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+                        
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 x:Name="ScienceBox"
+                                 KeyDown="ScienceBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 Text="Science Grade"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+                        
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 x:Name="EnglishBox"
+                                 KeyDown="EnglishBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 Text="English Grade"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+                        
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 x:Name="FilipinoBox"
+                                 KeyDown="FilipinoBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 Text="Filipino Grade"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+                        
+                        <TextBox Width="160"
+                                 Height="30" 
+                                 x:Name="PEBox"
+                                 KeyDown="PEBox_KeyDown"
+                                 KeyUp="Reset_KeyUp"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 Text="PE Grade"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0,10,0"
+                                 FontWeight="Bold"
+                                 Foreground="#B5B5B5"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="0"/>
+
+                        <Grid Width="160"
+                              Margin="0,0,0,0">
+                            <Button Width="160" Height="35" 
+                                    Click="SubmitGradeButton"
+                                    Style="{DynamicResource ButtonDesign}"
+                                    Content="Submit"
+                                    FontFamily="Montserrat"
+                                    FontWeight="Bold"
+                                    Foreground="White"
+                                    FontSize="16"/>
+                        </Grid>
+                        <Grid Width="160"
+                              Margin="0,10,0,0">
+                            <Button Width="160" Height="35" 
+                                    Click="SignOutButton"
+                                    Style="{DynamicResource ButtonDesign}"
+                                    Content="Sign Out"
+                                    FontFamily="Montserrat"
+                                    FontWeight="Bold"
+                                    Foreground="White"
+                                    FontSize="16"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

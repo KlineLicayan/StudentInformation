@@ -1,0 +1,197 @@
+﻿<Window x:Class="StudentInformation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInformation"
+        mc:Ignorable="d"
+        Resources="{StaticResource main}"
+        Title="MainWindow" Height="420" Width="680"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True">
+
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,680, 420" 
+                           RadiusX="10" RadiusY="10" />
+    </Window.Clip>
+    <Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0"
+                  Background="{DynamicResource ColorRed}"
+                  MouseDown="MoveWindow">
+
+                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,91,0,0" Width="200"
+                       Background="{DynamicResource ColorYellow}" Height="13"/>
+                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Width="200"
+                    Background="{DynamicResource ColorYellow}" Height="13"/>
+                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,353,0,0" Width="200"
+                    Background="{DynamicResource ColorYellow}" Height="13"/>
+                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,377,0,0" Width="200"
+                    Background="{DynamicResource ColorYellow}" Height="13"/>
+                <Border BorderThickness="1" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="170" Margin="16,22,0,0" Background="#F6F6F6"
+                        CornerRadius="170">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="30" 
+                                              Direction="270"
+                                              ShadowDepth="1"
+                                              Opacity=".25"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Image Source="CIT_LOGO.png" Stretch="None" Margin="-4,0,4,0" />
+                    </Grid>
+                </Border>
+                <Grid HorizontalAlignment="Left" Height="98" Margin="0,322,0,0" VerticalAlignment="Top" Width="200">
+
+                    <Button Height="40" Width="170"
+                            Background="#F6F6F6"
+                            Click="ExitWindow"
+                            Style="{DynamicResource ButtonDesign}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Image Source="signout.png" Stretch="None" />
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock Text="Sign Out" 
+                                           Padding="10,0,0,0"
+                                           FontFamily="Montserrat"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold"
+                                           FontSize="14"/>
+                            </Grid>
+                        </Grid>
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="30" 
+                                              Direction="270"
+                                              ShadowDepth="1"
+                                              Opacity=".25"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Grid.Column="1" Background="#F6F6F6">
+                <Border BorderBrush="#FFE8E8E8" BorderThickness="0" 
+                        HorizontalAlignment="Left" Height="75" Margin="21,10,0,0" VerticalAlignment="Top" Width="440"
+                        CornerRadius="5">
+                    <Grid>
+                        <TextBlock FontFamily="Montserrat"
+                                   FontSize="18"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold">
+                            <Span>CEBU INSTITUTE OF TECHNOLOGY</Span>
+                            <LineBreak />
+                            <Span>UNIVERSITY</Span>
+                        </TextBlock>
+                    </Grid>
+
+                </Border>
+                <Label Content="Student ID" HorizontalAlignment="Left" 
+                       FontFamily="Montserrat" 
+                       FontSize="12" 
+                       FontWeight="Bold" 
+                       VerticalAlignment="Top" Margin="32,110,0,0"/>
+                <Grid>
+
+
+                </Grid>
+                <Label Content="Student Name" HorizontalAlignment="Left" 
+                    FontFamily="Montserrat" 
+                    FontSize="12" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Top" Margin="32,151,0,0"/>
+                <Label Content="Student Course" HorizontalAlignment="Left" 
+                    FontFamily="Montserrat" 
+                    FontSize="12" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Top" Margin="32,191,0,0"/>
+                <Label Content="Student Address" HorizontalAlignment="Left" 
+                    FontFamily="Montserrat" 
+                    FontSize="12" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Top" Margin="32,232,0,0" RenderTransformOrigin="0.175,-0.88"/>
+                <Label Content="Student Contact" HorizontalAlignment="Left" 
+                    FontFamily="Montserrat" 
+                    FontSize="12" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Top" Margin="32,273,0,0"/>
+                <Label Content="Student Guardian" HorizontalAlignment="Left" 
+                    FontFamily="Montserrat" 
+                    FontSize="12" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Top" Margin="32,311,0,0"/>
+
+                <TextBox Margin="162,107,38,283" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" Padding="10,0,10,0"
+                         x:Name="StudentID"
+                        BorderThickness="0"/>
+                <TextBox Margin="162,148,38,242" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" 
+                         x:Name="StudentName" Padding="10,0,10,0"
+                        BorderThickness="0"/>
+                <TextBox Margin="162,188,38,202" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" 
+                         x:Name="StudentCourse" Padding="10,0,10,0"
+                        BorderThickness="0"/>
+                <TextBox Margin="162,229,38,161" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" Padding="10,0,10,0"
+                         x:Name="StudentAddress"
+                        BorderThickness="0"/>
+                <TextBox Margin="162,271,38,119" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" Padding="10,0,10,0"
+                         x:Name="StudentContact"
+                        BorderThickness="0"/>
+                <TextBox Margin="162,309,38,81" Height="30"
+                        FontFamily="Montserrat" FontSize="14"
+                        VerticalContentAlignment="Center" Padding="10,0,10,0"
+                         x:Name="StudentGuardian"
+                        BorderThickness="0"/>
+
+                <Grid Margin="0,355,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" VerticalAlignment="Center"
+                          HorizontalAlignment="Center">
+                        <Button Content="Update Information"
+                                FontFamily="Montserrat" Background="#363430"
+                                Click="UpdateStudentInformation"
+                                FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="35" Style="{DynamicResource ButtonDesign}"/>
+                    </Grid>
+
+                    <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Button Content="Request Grade"
+                                FontFamily="Montserrat" 
+                                Background="#363430"
+                                Foreground="White"
+                                FontSize="14"
+                                Click="RequestStudentGradeInformation"
+                                HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="35" Style="{DynamicResource ButtonDesign}"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
